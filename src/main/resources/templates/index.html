@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+</head>
+<body>
+
+<form method="post" action="/result" th:object ="${birthdayForm}">
+	<input type="text" placeholder="yyyymmdd" th:field ="*{birthday}">
+	<input type ="submit" value ="年齢計算" />
+	<!-- エラー表示 -->
+	<p th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Birthday Error</p>
+</form>
+
+
+
+</body>
+</html>
